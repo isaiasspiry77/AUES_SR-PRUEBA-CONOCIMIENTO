@@ -1,0 +1,30 @@
+<div cdkDropListGroup>
+    <div class="container">
+        <mat-grid-list cols="2" rowHeight="2:2">
+            <mat-grid-tile>
+                <mat-card id="cardGrupos" class="tarjeta">
+                    <mat-card-title>Grupos</mat-card-title>
+                    <mat-card-content>
+                        <div cdkDropList [cdkDropListData]="grupos" class="example-list" cdkDropListSortingDisabled
+                            (cdkDropListDropped)="drop($event)">
+                            <div class="example-box" *ngFor="let grupo of grupos" cdkDrag>{{grupo.name}} ({{grupo.abv}})
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card id="cardRequest" class="tarjeta">
+                    <mat-card-title>Consulta</mat-card-title>
+                    <mat-card-content>
+                        <div id="consultas" cdkDropList [cdkDropListData]="basket" class="example-list"
+                            (cdkDropListDropped)="drop($event)">
+                            <div class="example-box" *ngFor="let item of basket" cdkDrag>{{item.name}}</div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+    </div>
+</div>
